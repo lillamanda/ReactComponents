@@ -1,0 +1,36 @@
+.bannercontainer{
+    width: 100%;
+    display: flex; 
+    justify-content: center;
+    
+}
+
+.banner{
+    width: 85%;
+    background-color: gray;
+    margin: 5px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+/* Success, Warning, Error, Neutral */
+
+.success{
+    color: #065F46;
+    background-color: #ECFDF5;
+}
+
+.warning{
+    color: #92400E ;
+    background-color: #FFFBEB ;
+}
+
+.error{
+    color: #92400E ;
+    background-color: #FEF2F2 ;
+}
+
+.neutral{
+    color: #1E40AF ;
+    background-color: #EFF6FF ;
+}

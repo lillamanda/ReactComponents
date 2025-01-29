@@ -2,6 +2,8 @@ import React from 'react'
 import './App.css'
 
 import Badge from "../components/Badge/Badge.jsx"
+import Banner from "../components/Banner/Banner.jsx"
+
 
 function App() {
 
@@ -18,6 +20,10 @@ function App() {
       <Badge>FirstBadge</Badge>
 
 
+      <Banner type="warning">Extra text goes here</Banner>
+      <Banner type="error">Extra text goes here</Banner>
+      <Banner type="neutral">Extra text goes here</Banner>
+      <Banner type="success">Extra text goes here</Banner>
     </>
   )
 }
