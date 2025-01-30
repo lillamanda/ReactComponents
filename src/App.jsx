@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css'
 
 import Badge from "../components/Badge/Badge.jsx"
-import Banner from "../components/Banner/Banner.jsx"
+import Banner from "../components/Banner/index.jsx"
 
 
 function App() {
@@ -20,9 +20,14 @@ function App() {
       <Badge>FirstBadge</Badge>
 
 
-      <Banner type="warning">Extra text goes here</Banner>
+      <Banner type="warning">
+        <Banner.Title>There is a problem</Banner.Title>
+        <Banner.Text>Extra text goes here</Banner.Text>
+      </Banner>
       <Banner type="error">Extra text goes here</Banner>
-      <Banner type="neutral">Extra text goes here</Banner>
+      <Banner type="neutral">
+        <Banner.Text>Extra text goes here</Banner.Text>
+      </Banner>
       <Banner type="success">Extra text goes here</Banner>
     </>
   )

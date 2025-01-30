@@ -6,11 +6,29 @@
 }
 
 .banner{
-    width: 85%;
+    width: 80%;
+    max-width: 650px;
     background-color: gray;
     margin: 5px;
-    padding: 5px;
+    padding: 10px;
+    padding-bottom: 20px;
     font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    gap: 1em; 
+}
+
+.banner p {
+    margin: 0;
+}
+
+.bannerheader, .banner p{
+    font-size: 14px;
+    margin-top: 8.5px;
+}
+
+.icon{
+    padding: 10px;
 }
 
 /* Success, Warning, Error, Neutral */
@@ -19,18 +37,31 @@
     color: #065F46;
     background-color: #ECFDF5;
 }
+.success > .icon{
+    color: #34D399;
+}
 
 .warning{
     color: #92400E ;
     background-color: #FFFBEB ;
+}
+.warning > .icon{
+    color: #FBBF24;
 }
 
 .error{
     color: #92400E ;
     background-color: #FEF2F2 ;
 }
+.error > .icon{
+    color: #F87171;
+}
+
 
 .neutral{
     color: #1E40AF ;
     background-color: #EFF6FF ;
+}
+.neutral > .icon{
+    color: #60A5FA;
 }
