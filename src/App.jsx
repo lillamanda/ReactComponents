@@ -29,6 +29,7 @@ function App() {
         <Banner.Text>Extra text goes here</Banner.Text>
       </Banner>
       <Banner type="success">Extra text goes here</Banner>
+      <Banner type="warning"/>
     </>
   )
 }
