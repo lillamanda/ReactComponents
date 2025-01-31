@@ -36,17 +36,41 @@ function App() {
         <Card style="hover">
           <Card.Icon color="red"><FaHeart /></Card.Icon>
           <Card.Title>Title of my Card</Card.Title>
-          <Card.Text>This is my card text</Card.Text>
+          <Card.Text>This is my card text. The icon is being passed with a color for the icon</Card.Text>
         </Card>
         <Card style="hover">
           <Card.Icon backgroundColor="purple"><FaHeart /></Card.Icon>
           <Card.Title>Title of my Card</Card.Title>
-          <Card.Text>This is my card text</Card.Text>
+          <Card.Text>This is my card text. the icon component is being passed a background color</Card.Text>
         </Card>
         <Card>
           <Card.Icon></Card.Icon>
           <Card.Title>Title of my Card</Card.Title>
-          <Card.Text>This is my card text</Card.Text>
+          <Card.Text>This is my card text. this card is not sent a specific icon</Card.Text>
+        </Card>
+        <Card>
+          This is a card with no card components inside, just plain text
+        </Card>
+        <Card>
+          <Card.Title>This is a card without icon or text, only Card.Title</Card.Title>
+        </Card>
+        <Card>
+          <Card.Text>This is a card with only Card.Text</Card.Text>
+        </Card>
+        <Card>
+          <Card.Icon></Card.Icon>
+        </Card>
+        <Card>
+          <Card.Icon></Card.Icon>
+          <Card.Title>This is my title</Card.Title>
+          This is just random plain text without card.text surrounding it
+        </Card>
+        <Card>
+          <Card.Icon></Card.Icon>
+          <Card.Title>This is my title of a longer card</Card.Title>
+          <Card.Text>This is a long text for the card, should the card be limited in how long it gets, and cut off text that gets too long? I think so. 
+            Maybe it should also detect whether we have used enter to separate lines/paragraphs, and make those into separate paragraphs.
+            Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.</Card.Text>
         </Card>
       </div>
 

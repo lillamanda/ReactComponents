@@ -14,6 +14,9 @@ export default function Card({children, style="", icon}){
     // Figure out if theres a title/text in what is passed. - do I want to make a separate function for figuring this out, since that is also used in my Banner? 
     // Is there a basic react function that already does that? 
 
+    // All cards should be the same height for conformity, no matter how long the text. Make sure the text fades out towards the end - option to click to expand the card into a full page cover? 
+    // Provide a Card.Link to send people to a post where they can read more, typical cards used for blog posts etc? 
+
     return (
         <div className={`card ${style}`}>
             {children}
