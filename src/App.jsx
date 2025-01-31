@@ -3,7 +3,8 @@ import './App.css'
 
 import Badge from "../components/Badge/Badge.jsx"
 import Banner from "../components/Banner/index.jsx"
-
+import Card from "../components/Card/index.jsx"
+import { FaHeart } from "react-icons/fa6";
 
 function App() {
 
@@ -30,6 +31,13 @@ function App() {
       </Banner>
       <Banner type="success">Extra text goes here</Banner>
       <Banner type="warning"/>
+
+      <Card style="hover">
+        <Card.Icon><FaHeart /></Card.Icon>
+        <Card.Title>Title of my Card</Card.Title>
+        <Card.Text>This is my card text</Card.Text>
+      </Card>
+
     </>
   )
 }
