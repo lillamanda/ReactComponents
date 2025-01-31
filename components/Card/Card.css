@@ -37,8 +37,8 @@
     width: 48px;
     height: 48px;
     border-radius: 6px;
-    background-color: #353535;
-    color:#F9FAFB;
+    /* background-color: #353535; */
+    /* color:#F9FAFB; */
 
     display:flex; 
     justify-content: center;
@@ -49,4 +49,21 @@
     margin-top: -48px;
 }
 
+.cardLink{
+    display:flex; 
+    justify-content: center;
+    gap: 0.35em;
 
+    margin-top: 1em;
+    align-self: flex-end;
+
+    text-decoration: none;
+    /* color:#565656; */
+    font-size: 16px;
+    font-style:italic;
+    font-weight: 500;
+}
+
+.linkIcon{
+    margin-top: 0.09em;
+}

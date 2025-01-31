@@ -33,20 +33,22 @@ function App() {
       <Banner type="warning"/>
 
       <div className='cardContainer'>
-        <Card style="hover">
-          <Card.Icon color="red"><FaHeart /></Card.Icon>
+        <Card style="hover" secondaryColor={"pink"}>
+          <Card.Icon><FaHeart /></Card.Icon>
           <Card.Title>Title of my Card</Card.Title>
           <Card.Text>This is my card text. The icon is being passed with a color for the icon</Card.Text>
         </Card>
-        <Card style="hover">
-          <Card.Icon backgroundColor="purple"><FaHeart /></Card.Icon>
+        <Card style="hover" primaryColor={"purple"}>
+          <Card.Icon><FaHeart /></Card.Icon>
           <Card.Title>Title of my Card</Card.Title>
           <Card.Text>This is my card text. the icon component is being passed a background color</Card.Text>
+          <Card.Link link="https://google.com">Read more here</Card.Link>
         </Card>
         <Card>
           <Card.Icon></Card.Icon>
           <Card.Title>Title of my Card</Card.Title>
           <Card.Text>This is my card text. this card is not sent a specific icon</Card.Text>
+          <Card.Link link="https://google.com">Read more here</Card.Link>
         </Card>
         <Card>
           This is a card with no card components inside, just plain text
