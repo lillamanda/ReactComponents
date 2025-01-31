@@ -3,4 +3,11 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center; */
+  background-color: rgb(183, 172, 188);
+  padding: 2em;
+}
+
+.cardContainer{
+  display: flex; 
+  gap: 1.5em;
 }

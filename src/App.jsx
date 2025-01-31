@@ -32,11 +32,23 @@ function App() {
       <Banner type="success">Extra text goes here</Banner>
       <Banner type="warning"/>
 
-      <Card style="hover">
-        <Card.Icon><FaHeart /></Card.Icon>
-        <Card.Title>Title of my Card</Card.Title>
-        <Card.Text>This is my card text</Card.Text>
-      </Card>
+      <div className='cardContainer'>
+        <Card style="hover">
+          <Card.Icon color="red"><FaHeart /></Card.Icon>
+          <Card.Title>Title of my Card</Card.Title>
+          <Card.Text>This is my card text</Card.Text>
+        </Card>
+        <Card style="hover">
+          <Card.Icon backgroundColor="purple"><FaHeart /></Card.Icon>
+          <Card.Title>Title of my Card</Card.Title>
+          <Card.Text>This is my card text</Card.Text>
+        </Card>
+        <Card>
+          <Card.Icon></Card.Icon>
+          <Card.Title>Title of my Card</Card.Title>
+          <Card.Text>This is my card text</Card.Text>
+        </Card>
+      </div>
 
     </>
   )
