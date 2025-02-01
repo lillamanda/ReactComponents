@@ -1,36 +1,93 @@
-import React from "react"; 
+import React, { Children } from "react"; 
 import './Card.css'
+
+import CardIcon from "./CardIcon.jsx";
+import CardTitle from "./CardTitle.jsx";
+import CardText from "./CardText.jsx";
+import CardLink from "./CardLink.jsx";
 
 
     //   <Card style="hover">
     //     <Card.Icon><FaHeart /></Card.Icon>
     //     <Card.Title>Title of my Card</Card.Title>
     //     <Card.Text>This is my card text</Card.Text>
+    //     <Card.Link link="">This is my cardLink</Card.Link>
     //   </Card>
+
+
+    // Card should prob have CSS Grid, not CSS flexbox
+    // Could add option to override height/width of the card
+    // - option to click to expand the card into a full page cover? like a popup overlay thing? 
+
 
 const ThemeContext = React.createContext();
 
-export default function Card({children, style="", icon, primaryColor="#353535", secondaryColor="#F9FAFB"}){
+function Card({children, style="", primaryColor="#353535", secondaryColor="#F9FAFB"}){
 
-    // Should the Card main component accept colors and then adjust the children to secure a coherent theme so the user doesnt have to? 
-    // say primary color, secondary color. Primary color being background color of icon, and the "read more text"
-    // Do I then alter specific elements, or do i create a CSS theme in this component that allows me to easily change colors accordingly? 
+    function renderChildren(){
 
+        // Initialize with standard values
+        let icon = <CardIcon></CardIcon>;
+        let title = <CardTitle></CardTitle>;
+        let text = <CardText></CardText>;
+        let link;
+        
+        function checkWhichComponent(child){
+            console.log(child)
+            console.log(child.type)
+            if(child.type === CardIcon){
+                icon = child;
+                return true;
+            }
+            else if(child.type === CardTitle){
+                title = React.cloneElement(child);
+                return true;
+            }
+            else if(child.type === CardText){
+                text = React.cloneElement(child);
+                return true;
+            }
+            else if(child.type === CardLink){
+                link = React.cloneElement(child);
+                return true;
+            }
+            else{
+                return false
+            }
+        }
 
-    // Go through children, figure out if an icon is being passed, if not get a generic one
-    // Figure out if theres a title/text in what is passed. - do I want to make a separate function for figuring this out, since that is also used in my Banner? 
-    // Is there a basic react function that already does that? 
+        if(!children){
+            console.log("Empty Card, no children passed")
+        }
+        else if(Array.isArray(children)){
+            React.Children.forEach(children, child => checkWhichComponent(child));
+        }
+        else{
+            if(!checkWhichComponent(children)){
+                text=<CardText>{children}</CardText>;
+            }
+        }
 
-    // All cards should be the same height for conformity, no matter how long the text. Make sure the text fades out towards the end - option to click to expand the card into a full page cover? 
-    // Provide a Card.Link to send people to a post where they can read more, typical cards used for blog posts etc? 
+        return [icon, title, text, link];
+    }
+    
 
     return (
         <ThemeContext.Provider value={{primaryColor, secondaryColor}}>
             <div className={`card ${style}`}>
-                {children}
+                {/* {children} */}
+                {renderChildren()}
             </div>
         </ThemeContext.Provider>
     )
 }
+
+
+Card.Icon = CardIcon;
+Card.Title = CardTitle;
+Card.Text = CardText;
+Card.Link = CardLink;
+
+export default Card;
 
 export {ThemeContext}

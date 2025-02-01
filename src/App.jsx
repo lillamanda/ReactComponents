@@ -3,7 +3,7 @@ import './App.css'
 
 import Badge from "../components/Badge/Badge.jsx"
 import Banner from "../components/Banner/index.jsx"
-import Card from "../components/Card/index.jsx"
+import Card from "../components/Card/Card.jsx"
 import { FaHeart } from "react-icons/fa6";
 
 function App() {
@@ -73,6 +73,13 @@ function App() {
           <Card.Text>This is a long text for the card, should the card be limited in how long it gets, and cut off text that gets too long? I think so. 
             Maybe it should also detect whether we have used enter to separate lines/paragraphs, and make those into separate paragraphs.
             Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.</Card.Text>
+            <Card.Link link="https://google.com">Read more here</Card.Link>
+        </Card>
+        <Card>
+          <Card.Link link="https://google.com">Read more here</Card.Link>
+        </Card>
+        <Card>
+
         </Card>
       </div>
 
