@@ -9,6 +9,7 @@ import ToastText from "./ToastText.jsx";
 
 function Toast({type = "information", children}){
 
+    // These icons will get their CSS from Banner.css bc they're using the same setup and classnames.
     function getAppropriateIcon(){
         if (type === "success"){
             return (<FaCircleCheck />)
@@ -25,7 +26,7 @@ function Toast({type = "information", children}){
     }
 
     return (
-        <div className="toast">
+        <div className={`toast ${type}`}>
             <div className="icon">
                 {getAppropriateIcon()}
             </div>
