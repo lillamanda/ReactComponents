@@ -4,6 +4,7 @@ import './App.css'
 import Badge from "../components/Badge/Badge.jsx"
 import Banner from "../components/Banner/index.jsx"
 import Card from "../components/Card/Card.jsx"
+import Toast from "../components/Toast/Toast.jsx"
 import { FaHeart } from "react-icons/fa6";
 
 function App() {
@@ -81,6 +82,13 @@ function App() {
         <Card>
 
         </Card>
+      </div>
+
+      <div>
+        <Toast type="warning">
+          <Toast.Title>This is the title of my Toast</Toast.Title>
+          <Toast.Text>This is the text of my Toast</Toast.Text>
+        </Toast>
       </div>
 
     </>
