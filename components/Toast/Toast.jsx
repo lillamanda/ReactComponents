@@ -30,7 +30,9 @@ function Toast({type = "information", children}){
             <div className="icon">
                 {getAppropriateIcon()}
             </div>
-            {children}
+            <div>
+                {children}
+            </div>
         </div>
     )
 }
