@@ -10,10 +10,10 @@ import ToastText from "./ToastText.jsx";
 function Toast({type = "information", children}){
 
     // Create a function that will make it show for x seconds or until it is closed. setTimeOut(). 
-
+    // add class toastShow to element
 
     // Create CSS styles to put it on top of the page in the bottom right corner, z-index.
-    
+
 
     // These icons will get their CSS from Banner.css bc they're using the same setup and classnames.
     function getAppropriateIcon(){
