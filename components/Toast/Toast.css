@@ -3,7 +3,13 @@
     /* max-width: 500px; */
 
     /* Hidden by default. Visible on click */
-    /* visibility: hidden;  */
+    visibility: hidden; 
+
+
+
+}
+
+.toastShow {
 
     max-width: 900px;
     min-width: 250px; 
@@ -29,10 +35,7 @@
     right: 30px;
     bottom: 30px; 
 
-
-}
-
-.toastShow {
+    
     visibility: visible; /* Show the snackbar */
     /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
     However, delay the fade out process for 2.5 seconds */

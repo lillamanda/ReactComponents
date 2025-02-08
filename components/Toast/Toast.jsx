@@ -11,6 +11,19 @@ function Toast({type = "information", children}){
 
     // Create a function that will make it show for x seconds or until it is closed. setTimeOut(). 
     // add class toastShow to element
+    // do I need a function?  the toast should only live for a short duration when it is called
+    
+
+    const [show, setShow] = React.useState(true);
+
+    // setTimeout(setShow( (prevVal) => !prevVal ), 3000);
+    
+    function showToast(){
+        setShow( (prevVal) => !prevVal )
+        
+        // After 3 seconds, remove the show class from DIV
+        setTimeout(setShow( (prevVal) => !prevVal ), 3000);
+    }
 
     // Create CSS styles to put it on top of the page in the bottom right corner, z-index.
 
@@ -32,7 +45,7 @@ function Toast({type = "information", children}){
     }
 
     return (
-        <div className={`toast ${type}`}>
+        <div className={`toast ${ show ? "toastShow" : "" } ${type}`}>
             <div className="icon">
                 {getAppropriateIcon()}
             </div>
