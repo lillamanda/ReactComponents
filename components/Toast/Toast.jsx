@@ -9,24 +9,23 @@ import ToastText from "./ToastText.jsx";
 
 function Toast({type = "information", children}){
 
-    // Create a function that will make it show for x seconds or until it is closed. setTimeOut(). 
-    // add class toastShow to element
-    // do I need a function?  the toast should only live for a short duration when it is called
-    
+    // clean up CSS-classes for the toast
+    // somethings wrong with the animation of it when it disappears, after i refactored the code
 
     const [show, setShow] = React.useState(true);
-
-    // setTimeout(setShow( (prevVal) => !prevVal ), 3000);
+     
+    React.useEffect(() => {
+        const timeId = setTimeout(() => {
+            setShow(false)
+        }, 3000)
     
-    function showToast(){
-        setShow( (prevVal) => !prevVal )
-        
-        // After 3 seconds, remove the show class from DIV
-        setTimeout(setShow( (prevVal) => !prevVal ), 3000);
-    }
+        return () => {
+        clearTimeout(timeId)
+        }
+    }, []);
+      
 
-    // Create CSS styles to put it on top of the page in the bottom right corner, z-index.
-
+    // Add stacking if multiple toasts
 
     // These icons will get their CSS from Banner.css bc they're using the same setup and classnames.
     function getAppropriateIcon(){
@@ -44,8 +43,16 @@ function Toast({type = "information", children}){
         }
     }
 
+    // This makes sure the component disappears once the time passed for it to no longer show
+    // Should maybe have a hover-effect that if someone is mouse-overing the toast, it should stay till it no longer is mouseover ? 
+    if (!show) {
+        return null;
+    }
+                
     return (
-        <div className={`toast ${ show ? "toastShow" : "" } ${type}`}>
+        // <div className={`toast ${ show ? "toastShow" : "" } ${type}`}>
+        <div className={`toast toastShow ${type}`}>
+
             <div className="icon">
                 {getAppropriateIcon()}
             </div>
